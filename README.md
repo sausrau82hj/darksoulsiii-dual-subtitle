@@ -30,8 +30,6 @@ Defaults: reads `source\`, writes `msg\`.
 - `-Filter "menu*"` — matching packs only.
 - `-KeepWork` — keep the intermediate files.
 
-`tools\dualsub.py` takes the same options (`--source` …) and produces byte-identical packs.
-
 `tools\dualsub.config.json`:
 
 - `primary` / `secondary` — display language and the one appended to it, default `zhocn` / `engus`.
@@ -76,8 +74,6 @@ powershell -ExecutionPolicy Bypass -File tools\dualsub.ps1
 - `-Filter "menu*"` — 只重建匹配的包。
 - `-KeepWork` — 保留中间文件。
 
-`tools\dualsub.py` 参数一一对应（`--source`…），产出逐字节相同。
-
 `tools\dualsub.config.json`：
 
 - `primary` / `secondary` — 主语言与跟在后面的副语言，默认 `zhocn` / `engus`。
@@ -106,4 +102,4 @@ Inspired by [ER-Dualsub-Tool](https://github.com/matyamod/ER-Dualsub-Tool).
 
 ## License
 
-[LICENSE](LICENSE) (MIT) covers the files written for this project — `tools/dualsub.ps1`, `tools/dualsub.py`, its config, this README. It does not cover the game text under `msg/` and `source/` (modified FromSoftware / Bandai Namco text, offline single-player use only). Not affiliated with FromSoftware or Bandai Namco.
+[LICENSE](LICENSE) (MIT) covers the files written for this project — `tools/dualsub.ps1`, its config, this README. It does not cover the game text under `msg/` and `source/` (modified FromSoftware / Bandai Namco text, offline single-player use only). Not affiliated with FromSoftware or Bandai Namco.
