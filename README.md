@@ -15,20 +15,22 @@ Chinese and English in one line: `中文 / English`. Text only — no gameplay, 
 
 ### Rebuild
 
-Python 3.9+ and [Yabber](https://github.com/JKAnderson/Yabber/releases) extracted anywhere under the package root.
+Windows PowerShell (built in) and [Yabber](https://github.com/JKAnderson/Yabber/releases) extracted anywhere under the package root.
 
 ```
-python tools\dualsub.py
+powershell -ExecutionPolicy Bypass -File tools\dualsub.ps1
 ```
 
 Defaults: reads `source\`, writes `msg\`.
 
-- `--source` / `--out` — other folders.
-- `--game` — game folder, auto-detected otherwise.
-- `--yabber` — Yabber outside the package root.
-- `--primary` / `--secondary` — swap the main and secondary language.
-- `--filter "menu*"` — matching packs only.
-- `--keep-work` — keep the intermediate files.
+- `-Source` / `-Out` — other folders.
+- `-Game` — game folder, auto-detected otherwise.
+- `-Yabber` — Yabber outside the package root.
+- `-Primary` / `-Secondary` — swap the main and secondary language.
+- `-Filter "menu*"` — matching packs only.
+- `-KeepWork` — keep the intermediate files.
+
+`tools\dualsub.py` takes the same options (`--source` …) and produces byte-identical packs.
 
 `tools\dualsub.config.json`:
 
@@ -59,20 +61,22 @@ Text that already wraps keeps its newline.
 
 ### 重新生成
 
-需要 Python 3.9+ 和 [Yabber](https://github.com/JKAnderson/Yabber/releases)，解压到包内任意位置即可。
+Windows 自带的 PowerShell，加上 [Yabber](https://github.com/JKAnderson/Yabber/releases)，解压到包内任意位置即可，不用装 Python：
 
 ```
-python tools\dualsub.py
+powershell -ExecutionPolicy Bypass -File tools\dualsub.ps1
 ```
 
 默认读包里的 `source\`、写回包里的 `msg\`。
 
-- `--source` / `--out` — 换目录。
-- `--game` — 游戏目录，默认自动查找。
-- `--yabber` — Yabber 不在包内时。
-- `--primary` / `--secondary` — 换主副语言。
-- `--filter "menu*"` — 只重建匹配的包。
-- `--keep-work` — 保留中间文件。
+- `-Source` / `-Out` — 换目录。
+- `-Game` — 游戏目录，默认自动查找。
+- `-Yabber` — Yabber 不在包内时。
+- `-Primary` / `-Secondary` — 换主副语言。
+- `-Filter "menu*"` — 只重建匹配的包。
+- `-KeepWork` — 保留中间文件。
+
+`tools\dualsub.py` 参数一一对应（`--source`…），产出逐字节相同。
 
 `tools\dualsub.config.json`：
 
@@ -102,4 +106,4 @@ Inspired by [ER-Dualsub-Tool](https://github.com/matyamod/ER-Dualsub-Tool).
 
 ## License
 
-[LICENSE](LICENSE) (MIT) covers the files written for this project — `tools/dualsub.py`, its config, this README. It does not cover the game text under `msg/` and `source/` (modified FromSoftware / Bandai Namco text, offline single-player use only). Not affiliated with FromSoftware or Bandai Namco.
+[LICENSE](LICENSE) (MIT) covers the files written for this project — `tools/dualsub.ps1`, `tools/dualsub.py`, its config, this README. It does not cover the game text under `msg/` and `source/` (modified FromSoftware / Bandai Namco text, offline single-player use only). Not affiliated with FromSoftware or Bandai Namco.
