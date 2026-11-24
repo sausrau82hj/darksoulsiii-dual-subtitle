@@ -42,17 +42,7 @@ Defaults: reads `source\`, writes `msg\`. Options only when needed: `-Source` / 
 }
 ```
 
-Keys are the pack name without `.msgbnd.dcx`. A pack-level `"enabled": false` drops the whole pack from the build: nothing is merged and no new `.dcx` is written, so the game keeps the vanilla text.
-
-```json
-{
-  "files": {
-    "item_dlc2": { "enabled": false }
-  }
-}
-```
-
-Inside `fmg`, a key is one FMG file name and takes a mode string (`"off"` / `"sec_only"`) or `{ "separator": "…" }`. `"off"` skips that one FMG, but the pack is still built.
+`"enabled": false` on a pack skips the whole pack. Inside `fmg` a key takes a mode string (`"off"` / `"sec_only"`) or `{ "separator": "…" }`. Keys are the pack name without `.msgbnd.dcx` and the FMG file name.
 
 Text that already wraps keeps its newline.
 
@@ -99,17 +89,7 @@ powershell -ExecutionPolicy Bypass -File tools\dualsub.ps1
 }
 ```
 
-键名是去掉 `.msgbnd.dcx` 的包名。包这一层写 `"enabled": false`，这个包就不参与合并、也不生成新的 `.dcx`，游戏里还是原版文本。
-
-```json
-{
-  "files": {
-    "item_dlc2": { "enabled": false }
-  }
-}
-```
-
-`fmg` 里的键是单个 FMG 文件名，可以给模式字符串（`"off"` / `"sec_only"`），也可以给 `{ "separator": "…" }`。`"off"` 只是这个 FMG 不合并，包照样生成。
+包上写 `"enabled": false` 就整包跳过。`fmg` 里的键可以给模式字符串（`"off"` / `"sec_only"`），也可以给 `{ "separator": "…" }`。键名是去掉 `.msgbnd.dcx` 的包名和 FMG 文件名。
 
 原本带换行的文本固定保留换行。
 
