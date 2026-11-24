@@ -14,7 +14,7 @@ Point one of the mod loaders at this package's `msg` folder — [me](https://www
 
 ### Rebuild
 
-Windows PowerShell (built in) and [Yabber](https://github.com/JKAnderson/Yabber/releases) extracted anywhere under the package root.
+Windows PowerShell (built in) and [Yabber](https://github.com/JKAnderson/Yabber/releases). Yabber goes in the package root (a folder named `Yabber*`, e.g. `Yabber 1.3.1\`) or under `tools\`; anywhere else, pass `-Yabber <folder>`.
 
 ```
 powershell -ExecutionPolicy Bypass -File tools\dualsub.ps1
@@ -27,7 +27,22 @@ Defaults: reads `source\`, writes `msg\`. Options only when needed: `-Source` / 
 - `primary` / `secondary` — display language and the one appended to it, default `zhocn` / `engus`.
 - `separator` — separator inside one line, default `" / "`.
 - `categories` — `true` merge · `"off"` leave as-is · `"sec_only"` secondary only.
-- `files` — per-pack and per-FMG overrides, highest priority.
+- `files` — per-pack and per-FMG overrides, highest priority:
+
+```json
+{
+  "files": {
+    "menu_dlc1": {
+      "fmg": {
+        "血文字_dlc1.fmg": { "separator": " ~ " },
+        "イベントテキスト_dlc1.fmg": "sec_only"
+      }
+    }
+  }
+}
+```
+
+`"enabled": false` on a pack skips the whole pack. Inside `fmg` a key takes a mode string (`"off"` / `"sec_only"`) or `{ "separator": "…" }`. Keys are the pack name without `.msgbnd.dcx` and the FMG file name.
 
 Text that already wraps keeps its newline.
 
@@ -46,7 +61,7 @@ Text that already wraps keeps its newline.
 
 ### 重新生成
 
-Windows 自带的 PowerShell，加上 [Yabber](https://github.com/JKAnderson/Yabber/releases)，解压到包内任意位置即可。
+Windows 自带的 PowerShell，加上 [Yabber](https://github.com/JKAnderson/Yabber/releases)。Yabber 解压到包根（目录名以 `Yabber` 开头，如 `Yabber 1.3.1\`）或 `tools\` 下都行；放在别处就用 `-Yabber <目录>` 指过去。
 
 ```
 powershell -ExecutionPolicy Bypass -File tools\dualsub.ps1
@@ -59,7 +74,22 @@ powershell -ExecutionPolicy Bypass -File tools\dualsub.ps1
 - `primary` / `secondary` — 主语言与跟在后面的副语言，默认 `zhocn` / `engus`。
 - `separator` — 单行内的分隔符，默认 `" / "`。
 - `categories` — `true` 合并 · `"off"` 原样 · `"sec_only"` 只留副语言。
-- `files` — 按包、按 FMG 覆盖，优先级最高。
+- `files` — 按包、按 FMG 覆盖，优先级最高：
+
+```json
+{
+  "files": {
+    "menu_dlc1": {
+      "fmg": {
+        "血文字_dlc1.fmg": { "separator": " ~ " },
+        "イベントテキスト_dlc1.fmg": "sec_only"
+      }
+    }
+  }
+}
+```
+
+包上写 `"enabled": false` 就整包跳过。`fmg` 里的键可以给模式字符串（`"off"` / `"sec_only"`），也可以给 `{ "separator": "…" }`。键名是去掉 `.msgbnd.dcx` 的包名和 FMG 文件名。
 
 原本带换行的文本固定保留换行。
 
