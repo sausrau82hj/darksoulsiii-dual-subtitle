@@ -1,16 +1,15 @@
 # Dual Subtitle — *DARK SOULS III*
 
-Chinese and English in one line: `中文 / English`. Text only.
-
-Only three kinds of text come from this package, base game and both DLC:
+NPC dialogue and cutscene subtitles in Chinese and English on one line: `中文` / `English`.
+Text only.
 
 | | |
 | --- | --- |
-| NPC dialogue | `会話` |
-| Cutscene subtitles | `ムービー字幕` |
-| Area name shown in the middle of the screen after warping | `地名` |
+| NPC dialogue | `中文` + `English` |
+| Cutscene subtitles | `中文` + `English` |
+| Area name shown after warping | English, in both language modes |
 
-Every other text stays vanilla.
+Base game and both DLC. Every other text stays vanilla.
 
 **English** · [中文](#中文)
 
@@ -30,7 +29,7 @@ Delete the mod's `msg` folder.
 
 - Text only. If another mod also replaces `msg`, load order decides.
 - A merged line can wrap to three lines and sit tight against the bottom of the dialogue box.
-- The area title is a single line, so a few long names run past the edge and get cut at the end.
+- The area title is drawn on one line and cannot be made bilingual without cutting the tail off long names, so it stays English.
 
 ---
 
@@ -48,7 +47,7 @@ Delete the mod's `msg` folder.
 
 - 只改文本。别的 mod 也换 `msg` 时，看加载顺序。
 - 合并后的行可能折到三行，个别对话会顶到对话框下沿。
-- 地名标题是单行，个别长名字会超出屏幕、尾部被切掉。
+- 地名标题是单行、不能缩字号，双语会把长名字的尾巴切掉，所以固定显示英文。
 
 ---
 
