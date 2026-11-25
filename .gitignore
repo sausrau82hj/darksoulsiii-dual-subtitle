@@ -2,7 +2,7 @@
 _work/
 *.zip
 
-# Yabber can sit anywhere under the package root, but never in the repo
+# Yabber is a local build tool, never part of the repo
 Yabber*/
 
 # local Nexus description draft, not part of the package
